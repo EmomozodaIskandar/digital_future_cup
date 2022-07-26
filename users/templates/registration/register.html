@@ -1,13 +1,75 @@
-{% extends 'base.html' %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{% static 'users/js/script.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'users/css/registration_login.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}" type="text/css" />
+</head>
+<body>
+    <div class="container forsmall">
+        <div id="wrapped_sec">
+    <div id="subscribe">
+        <form method="post"> {% csrf_token %}
+            <h1>Бақайдгирӣ</h1>
+    
+            <p class="lead">
+                <label for="name" class="form-label ps-2">Ном</label>
+                <input type="text" class="form-control" id="name" placeholder="Шахром" name="first_name" required>
+            </p>
 
-{% block content %} 
-<h1>Sign Up page</h1>
+            <p class="lead">
+                <label for="name" class="form-label ps-2">Насаб</label>
+                <input type="text" class="form-control" id="name" placeholder="Давлатов" name="last_name" required>
+            </p>
+    
+            <p class="lead">
+                <label for="email" class="form-label ps-2">Номаи электронӣ</label>
+                <input type="email" class="form-control" id="email" placeholder="davlatov@gmail.com" name="email" required>
+            </p>
+    
+            <p class="lead">
+                <label for="pwd" class="form-label ps-2">Рамз</label>
+                <input type="password" class="form-control" id="pwd" placeholder="123456789" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                       title="Пароль должен содержать хотя бы одну заглавную и маленькую букву и 8 символов" required>
+    
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </p>
+    
+            <p class="lead">
+                <label for="passwordsignup_confirm">Рамзро тасдиқ кунед</label><br>
+                <input class="form-control" id="passwordsignup_confirm" name="password2" required type="password">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </p>
 
-<form method="POST">
-    {{form}}
-    {% csrf_token %}
-
-    <button type="submit">Sign Up</button>
-</form>
-
-{% endblock %} 
+            <div class="lead" id="message">
+                <h6>Password must contain the following:</h6>
+                <p id="letter" class="invalid lead" style="font-size: smaller;">A <b>lowercase</b> letter</p>
+                <p id="capital" class="invalid lead" style="font-size: smaller;">A <b>capital (uppercase)</b> letter</p>
+                <p id="number" class="invalid lead" style="font-size: smaller;">A <b>number</b></p>
+                <p id="length" class="invalid lead" style="font-size: smaller;">Minimum <b>8 characters</b></p>
+            </div>
+    
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="myCheck"  name="remember" required>
+                <label class="form-check-label" for="myCheck">Ман ба <a href="#" class="text-decoration-none" style="color: rgba(17, 140, 241, 0.65); ">Шартҳои истифодабаранда</a> розӣ хастам.</label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Check this checkbox to continue.</div>
+            </div>
+          
+            <button type="submit" class="btn btn-light">Дохилшавӣ</button><hr>
+        </form>
+        <p class="lead">Аллакай ба қайд гирифта шудаед?
+            <a href="index.html" class="text-decoration-none" style="color: rgba(17, 140, 241, 0.65);"> Ба вуруди низом гузаред</a>
+        </p>
+    </div>
+</div>
+</div>
+</body>
+</html>

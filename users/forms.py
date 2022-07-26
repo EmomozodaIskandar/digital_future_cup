@@ -13,6 +13,6 @@ class UserCreationForm(UserCreationForm):
     )
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ('email','password1', 'password2')
+        fields = ('first_name', 'last_name','email','password1', 'password2')
 
 

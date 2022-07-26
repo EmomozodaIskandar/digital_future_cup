@@ -1,11 +1,46 @@
-{% extends 'base.html' %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <script src="{% static 'users/js/script.js' %}"></script> -->
+    <link rel="stylesheet" href="{% static 'users/css/registration_login.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}" type="text/css" />
+</head>
+<body>
+<div class="container  forsmall" id="container">
+    <a class="hiddenanchor" id="tosubscribe"></a>
+    <a class="hiddenanchor" id="tologin"></a>
+    <div id="wrapped">
+        <div id="login">
+            <form action="{% url 'login' %}" method="post">
+                 
+                <h1 class="text-center">Даромад</h1>
+                <p class="lead">
+                    <label for="username">Email</label><br>
+                    <input class="form-control"  id="username" name="username" required type="email" placeholder="davlatov@gmail.com">
+                </p>
+                <p class="lead">
+                    <label for="password">Рамз</label><br>
+                    <input class="form-control" id="password" name="password" required type="password" placeholder="REr12te63">
+                </p>
+                {% csrf_token %}
+                <p class="lead">
+                    <input type="checkbox" id="loginkeeping" name="loginkeeping" value="loginkeeping">
+                    <label for="loginkeeping">Маро дар низом нигоҳ доред</label>
+                </p>  
+               <button type="submit" class="btn btn-light" style="margin-top: 10px;">Дохилшавӣ</button>
+                <hr>
+            </form>
+            <a href="{url 'password_reset'}" class="lead text-decoration-none " style="color: rgb(4, 28, 247);">Рамзро фаромуш кардам</a><br>
+            <p class="lead">Ҳоло шумо ба қайд гирифта нашудаед?
+                <a href="{% url 'register' %}" class="text-decoration-none " style="color: rgba(17, 140, 241, 0.65);">Бо мо ҳамроҳ шавед</a>
+            </p>
+        </div>
 
-{% block content %}
-<h1>Login</h1>
-<form action="{% url 'login' %}" method="post">
-    {{form}}
-    {% csrf_token %}
-    <button type="submit">Submit</button>
-</form>
-<a href="{% url 'password_reset' %}">Forget password?</a>
-{% endblock %}
+
+    </div>
+</div>
+</body>
+</html>

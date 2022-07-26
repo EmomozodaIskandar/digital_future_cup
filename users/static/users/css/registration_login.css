@@ -1,0 +1,60 @@
+#wrapped {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#wrapped_sec {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+body{
+    padding-top: 7%;
+}
+.btn {
+    background: linear-gradient(236.8deg, rgba(106, 217, 233, 0.657) 3.5%, rgba(181, 220, 253, 0.648) 27.69%, rgba(237, 176, 234, 0.486) 61.69%, rgba(232, 154, 191, 0.594798) 100%);
+}
+
+#message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#message p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "&#10004;";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "&#10006;";
+}
+@media screen and (min-width: 600px){
+    .forsmall{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+

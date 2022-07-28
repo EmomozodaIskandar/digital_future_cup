@@ -1,0 +1,24 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+    gap: 6rem;
+    justify-content: space-around;
+    width: 600px;
+    position: fixed;
+    top: 160px;
+    right: 500px;
+}
+.card{
+    overflow: hidden;
+    border: 1px solid pink;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+    text-align: center;
+    padding: 10px;
+}
+.card:hover{
+    transform: scale(1.02);
+}

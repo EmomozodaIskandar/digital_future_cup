@@ -1,8 +1,8 @@
-# Django #
+# Django
 *.log
 *.pot
 *.pyc
-__pycache__
+**/__pycache__/
 media
 
 # Backup files # 
@@ -103,6 +103,7 @@ venv/
 ENV/ 
 env.bak/ 
 venv.bak/ 
+
 
 # mkdocs documentation 
 /site 

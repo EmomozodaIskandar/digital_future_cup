@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{%block content %}
+<h2>Upload page</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- Passport : <input type="file" name="passport">
+    <br>
+    <small style="color:red;">{{error}}</small>
+    <br>-->
+    {{form.as_p}}
+    <button type="submit">Upload</button>
+     
+</form>
+<hr>
+<!-- <h3>{{FileName}}</h3>
+<h3>{{FileSize}}</h3> -->
+{%endblock%}

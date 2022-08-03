@@ -9,7 +9,7 @@ urlpatterns = [
     path('activate_account/<uidb64>/<token>/',  
         activate_account, name='activate'),
     path('upload/',upload, name = 'upload'),
-    path('upload/profile/',profile, name='profile'),
+    path('upload/profile/<uidb64>/',profile, name='profile'),
 ]
 
 if settings.DEBUG:

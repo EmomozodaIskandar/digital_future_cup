@@ -20,49 +20,97 @@ class User(AbstractUser):
     REQUIRED_FIELDS = ["username"]
 
 #User's profile
+# class Users_profile(models.Model):    
+#     User = get_user_model()
+#     user          = models.ForeignKey(User, on_delete=models.CASCADE)
+#     is_driver     = models.BooleanField()
+#     passport      = models.FileField(
+#         upload_to='passports'
+#     )
+#     tech_passport = models.FileField(
+#         upload_to='tech_passports', 
+#         blank=True, 
+#     )
+#     tech_osmotr   = models.FileField(
+#         upload_to='tech_osmotr', 
+#         blank=True, 
+#     )
+#     tax           = models.FileField(
+#         upload_to='taxes', 
+#         blank=True, 
+#     )
+#     tonirovka     = models.FileField(
+#         upload_to='tonirovka', 
+#         blank=True, 
+#     )
+#     strakhovka    = models.FileField(
+#         upload_to='strakhovka', 
+#         blank=True, 
+#     )
+#     ecology       = models.FileField(
+#         upload_to='ecology', 
+#         blank=True, 
+#     )
+#     talon         = models.FileField(
+#         upload_to='talon', 
+#         blank=True, 
+#     )
+#     med_spravka   = models.FileField(
+#         upload_to='med_spravka', 
+#         blank=True, 
+#     ) 
+#     udost_von_gas_balon_auto = models.FileField(
+#         upload_to='udost_von_gas_balon_auto', 
+#         blank=True, 
+#     )
+#     def __str__(self):
+#         return self.user.first_name + ' ' + self.user.last_name
+
+
 class Users_profile(models.Model):    
     User = get_user_model()
     user          = models.ForeignKey(User, on_delete=models.CASCADE)
+
     is_driver     = models.BooleanField()
-    passport      = models.FileField(
-        upload_to='passports'
+    
+    passport      = models.CharField(
+        max_length=120
     )
-    tech_passport = models.FileField(
-        upload_to='tech_passports', 
+    tech_passport = models.CharField( 
         blank=True, 
+        max_length=120,
     )
-    tech_osmotr   = models.FileField(
-        upload_to='tech_osmotr', 
-        blank=True, 
+    tech_osmotr   = models.CharField(
+        blank=True,
+        max_length=120, 
     )
-    tax           = models.FileField(
-        upload_to='taxes', 
+    tax           = models.CharField( 
         blank=True, 
+        max_length=120,
     )
-    tonirovka     = models.FileField(
-        upload_to='tonirovka', 
-        blank=True, 
+    tonirovka     = models.CharField( 
+        blank=True,
+        max_length=120, 
     )
-    strakhovka    = models.FileField(
-        upload_to='strakhovka', 
+    strakhovka    = models.CharField(
         blank=True, 
+        max_length=120,
     )
-    ecology       = models.FileField(
-        upload_to='ecology', 
+    ecology       = models.CharField(
         blank=True, 
+        max_length=120,
     )
-    talon         = models.FileField(
-        upload_to='talon', 
+    talon         = models.CharField( 
         blank=True, 
+        max_length=120,
     )
-    med_spravka   = models.FileField(
-        upload_to='med_spravka', 
+    med_spravka   = models.CharField(
         blank=True, 
+        max_length=120,
     ) 
-    udost_von_gas_balon_auto = models.FileField(
-        upload_to='udost_von_gas_balon_auto', 
+    udost_von_gas_balon_auto = models.CharField( 
         blank=True, 
+        max_length=120,
     )
     def __str__(self):
         return self.user.first_name + ' ' + self.user.last_name
-

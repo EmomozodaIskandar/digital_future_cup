@@ -4,10 +4,8 @@
 <h2>Upload page</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <!-- Passport : <input type="file" name="passport">
-    <br>
     <small style="color:red;">{{error}}</small>
-    <br>-->
+    <br>
     {{form.as_p}}
     <button type="submit">Upload</button>
      

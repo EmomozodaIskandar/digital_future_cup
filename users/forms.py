@@ -1,5 +1,3 @@
-from dataclasses import field, fields
-from pyexpat import model
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from django import forms
@@ -21,18 +19,48 @@ class UserCreationForm(UserCreationForm):
 
 
 class upload_files_form(forms.ModelForm):
-    passport                 = forms.FileField()
-    tech_passport            = forms.FileField(required=False, )
-    tech_osmotr              = forms.FileField()
-    tax                      = forms.FileField()
-    tonirovka                = forms.FileField()
-    strakhovka               = forms.FileField()
-    ecology                  = forms.FileField()
-    talon                    = forms.FileField()
-    med_spravka              = forms.FileField()  
-    udost_von_gas_balon_auto = forms.FileField()
-    
+    passport                 = forms.FileField(
+        
+    )
+    tech_passport            = forms.FileField(
+        required=False,
+    )
+    tech_osmotr              = forms.FileField(
+        required=False,
+    )
+    tax                      = forms.FileField(
+        required=False,
+    )
+    tonirovka                = forms.FileField(
+        required=False,
+    )
+    strakhovka               = forms.FileField(
+        required=False,
+    )
+    ecology                  = forms.FileField(
+        required=False,
+    )
+    talon                    = forms.FileField(
+        required=False,
+    )
+    med_spravka              = forms.FileField(
+        required=False,
+    )
+    udost_von_gas_balon_auto = forms.FileField(
+        required=False,
+    )
     class Meta:
         model = Users_profile
-        fields = ['is_driver',]
+        fields = [
+            'is_driver',
+            # 'passport', 
+            # 'tech_passport', 
+            # 'tech_osmotr', 
+            # 'tax','tonirovka',
+            # 'strakhovka',
+            # 'ecology',
+            # 'talon', 
+            # 'med_spravka', 
+            # 'udost_von_gas_balon_auto',
+            ]
     

@@ -7,9 +7,12 @@
     <title>{{user.first_name}} {{user.last_name}}</title>
 </head>
 <body class="container">
-    <h2>Profile {% user.last_name %} {% user.first_name %}</h2>
+    <h2>Profile {{ user.last_name }} {{ user.first_name }}</h2>
     <table>
-        
+        <tr><strong>Docs</strong></tr>
+        <br>
+        <td>{{docs.passport}}</td>  
     </table>
+    <a href="{{ docs.passport.url }}" target="_blank">Download</a>
 </body>
 </html>

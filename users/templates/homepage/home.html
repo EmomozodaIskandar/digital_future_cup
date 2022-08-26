@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Все услуги</label>
+      <ul>
+        <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
+        <li><a href="#">Услуги</a></li>
+        <li><a class="active" href="#main">Главная</a></li>
+        <li><a href="#">Уведомления</a></li>
+        <li><a href="#">Настройки</a></li>
+      </ul>
+    </nav>
+
+    <div class="main" id="main">
+    <div class="cards">
+        <div class="image">
+          <img src="{% static 'media/3366ef083868d63a4dd4afb318808883.png' %}" alt="...">
+        </div>
+        <div class="title">
+          Водительское удостоверение
+        </div>
+    </div>
+
+    <div class="cards">
+      <div class="image">
+        <img src="{% static 'media/b67ee3462bcd830686436331c1206880.png' %}" alt="...">
+      </div>
+      <div class="title">
+        Заграничный паспорт
+      </div>
+  </div>
+
+  <div class="cards">
+    <div class="image">
+      <img src="{% static 'media/d1ef3d0b2f504f56245b178dde31597f.png' %}" alt="...">
+    </div>
+    <div class="title">
+      Общегражданский паспорт
+    </div>
+</div>
+
+<div class="cards">
+  <div class="image">
+    <img src="{% static 'media/8735572b3ff3e561f5174a06cd8a5cb9.png' %}" alt="...">
+  </div>
+  <div class="title">
+    Справка об отсутствии судимости
+  </div>
+</div>
+
+<div class="cards">
+  <div class="image">
+    <img src="{% static 'media/0456c0d279b484bafdf973ed87f1ab98.png' %}" alt="...">
+  </div>
+  <div class="title">
+    Электронная медицинская
+  </div>
+</div>
+
+<div class="cards">
+  <div class="image">
+    <img src="{% static 'media/e7a89d2948227579b93ce5d4f4e87f88.png' %}" alt="...">
+  </div>
+  <div class="title">
+    Электронная трудовая книжка
+  </div>
+</div>
+</div>
+  </body>
+</html>
